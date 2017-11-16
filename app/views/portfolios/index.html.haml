@@ -1,0 +1,11 @@
+%h1= 'Portfolio items'
+
+- @portfolio_items.each do |p|
+    = p.title
+    = p.subtitle
+    = p.body
+    = image_tag p.thumb_image
+    = link_to "link to portfolio", portfolio_show_path(p)
+    = link_to "edit portfolio", edit_portfolio_path(p)
+    = link_to 'delete portfolio', portfolio_path(p), method: :delete
+    %br

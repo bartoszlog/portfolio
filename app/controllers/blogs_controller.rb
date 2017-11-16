@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
 
   def index
     @blogs = Blog.all
@@ -21,9 +21,9 @@ class BlogsController < ApplicationController
 
     respond_to do |format|
       if @blog.save
-        format.html { redirect_to @blog, notice: 'Your post was successfully created.' }
+        redirect_to @blog
       else
-        format.html { render :new }
+        redirect_to new_portfolio_path
       end
     end
   end
@@ -46,11 +46,20 @@ class BlogsController < ApplicationController
       format.html { redirect_to blogs_url, notice: 'Post was successfully destroyed.' }
     end
   end
+  
+  def toggle_status
+    if @blog.draft?
+      @blog.published!
+    else
+      @blog.draft!
+    end
+    redirect_to blogs_url
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
-      @blog = Blog.find(params[:id])
+      @blog = Blog.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
