@@ -18,24 +18,19 @@ class BlogsController < ApplicationController
 
   def create
     @blog = Blog.new(blog_params)
-
-    respond_to do |format|
-      if @blog.save
-        redirect_to @blog
-      else
-        redirect_to new_portfolio_path
-      end
+    if @blog.save
+      redirect_to @blog
+    else
+      redirect_to new_blog_path
     end
   end
 
 
   def update
-    respond_to do |format|
-      if @blog.update(blog_params)
-        format.html { redirect_to @blog, notice: 'Post was successfully updated.' }
-      else
-        format.html { render :edit }
-      end
+    if @blog.update(blog_params)
+      redirect_to @blog
+    else
+      redirect_to blog_path
     end
   end
 
