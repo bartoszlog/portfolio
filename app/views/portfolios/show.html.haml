@@ -9,3 +9,9 @@
 = image_tag @portfolio_item.main_image
 %br
 = image_tag @portfolio_item.thumb_image
+
+%h2 Technolgies used :
+
+- @portfolio_item.technologies.each do |t|
+    = t.name
+    %br
