@@ -5,16 +5,24 @@ class PortfoliosController < ApplicationController
         @portfolio_items = Portfolio.all 
     end
     
+    def java
+        @java_item = Portfolio.java_portfolio_items
+    end
+    
+    def rails_porfolio
+        @portfolio_item = Portfolio.rails_portfolio_items
+    end
+    
     def new
         @portfolio_item = Portfolio.new
     end
     
     def create
-        @portfolio_item = Portfolio.new(params[portfolio_params])
+        @portfolio_item = Portfolio.new(portfolio_params)
         if @portfolio_item.save
-            redirect_to @portfolio_item
+            redirect_to portfolios_path
         else
-            redirect_to root
+            redirect_to portfolios_path
         end
     end
         
