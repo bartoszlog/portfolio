@@ -1,16 +1,10 @@
-%h1= 'Portfolio items'
-
-- @portfolio_items.each do |p|
-    = p.title
-    %br
-    = p.subtitle
-    %br
-    = p.body
-    %b
-    = image_tag p.thumb_image
-    %br
-    = link_to "link to portfolio", portfolio_show_path(p)
-    = link_to "edit portfolio", edit_portfolio_path(p)
-    = link_to 'delete portfolio', portfolio_path(p), method: :delete
-    %br
-    %br
+%p#notice= notice
+%h1 Listing Blogs
+%table
+  %thead
+    %tr
+      %th Title
+      %th Body
+      %th{:colspan => "3"}
+  %tbody
+    = render @portfolios

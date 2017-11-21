@@ -1,17 +1,17 @@
-= form_for portfolio_item do |f|
-    = f.label :title
-    = f.text_field :title
+= form_for portfolio do |portfolio|
+    = portfolio.label :title
+    = portfolio.text_field :title
     %br
-    = f.label :subtitle
-    = f.text_area :subtitle
+    = portfolio.label :subtitle
+    = portfolio.text_area :subtitle
     %br
-    = f.label :body
-    = f.text_area :body
+    = portfolio.label :body
+    = portfolio.text_area :body
     %br
     %ul
-        = f.fields_for :technologies do |technology_form|
+        = portfolio.fields_for :technologies do |technology_form|
             %li
                 =technology_form.label :name
                 =technology_form.text_field :name
     %br
-    = f.submit
+    = portfolio.submit
