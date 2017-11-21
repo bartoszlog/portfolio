@@ -10,7 +10,6 @@
     = yield
     %p.notice= notice
     %p.alert= alert
-    - if current_user.is_a?(User)
-      = link_to 'logout', destroy_user_session_path, method: :delete
+    = login_helper
     - if session[:source]
       Thanks for visiting me from  #{session[:source]}
