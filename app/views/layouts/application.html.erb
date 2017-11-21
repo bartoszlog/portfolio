@@ -11,7 +11,9 @@
 <%= yield %>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
-<%= link_to 'logout', destroy_user_session_path, method: :delete %>
+<% if current_user.is_a?(User) %>
+  <%= link_to 'logout', destroy_user_session_path, method: :delete %>
+<% end %>
 
 <% if session[:source] %>
   Thanks for visiting me from  <%= session[:source] %>
