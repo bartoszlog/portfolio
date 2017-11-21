@@ -8,9 +8,7 @@
   %body
     %p.notice= notice
     %p.alert= alert
+    = source_helper
     = login_helper
     = yield
     = render 'shared/navbar', location: 'bottom'
-    - if session[:source]
-      %p
-        Thanks for visiting me from #{session[:source]}
