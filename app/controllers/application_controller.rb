@@ -5,10 +5,7 @@ class ApplicationController < ActionController::Base
   include DeviseList
   include SetSource
   include CurrentUserConcern
+  include DefaultPage
   
-  before_filter :set_title
-  
-  def set_title
-    @page_title = "My Portfolio"
-  end
+
 end

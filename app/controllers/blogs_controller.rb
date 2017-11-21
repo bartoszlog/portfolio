@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
+  layout "blog"
 
   def index
     @blogs = Blog.all
@@ -7,6 +8,7 @@ class BlogsController < ApplicationController
   end
 
   def show
+    @page_title = @blog.title
   end
 
   def new
