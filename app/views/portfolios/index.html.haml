@@ -8,3 +8,4 @@
       %th{:colspan => "3"}
   %tbody
     = render @portfolios
+= link_to 'Create new portfolio', new_portfolio_path if logged_in?(:site_admin)

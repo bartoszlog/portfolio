@@ -1,13 +1,11 @@
 class PortfoliosController < ApplicationController
     before_action :portfolio_item_find, only: [:edit, :show, :destroy, :update]
+    access all: [:show, :index], user: {except: [:destroy, :new, :update, :edit, :create]}, site_admin: :all
+
     layout "portfolio"
     
     def index
         @portfolios = Portfolio.all 
-    end
-    
-    def java
-        @java_item = Portfolio.java_portfolio_items
     end
     
     def rails_porfolio

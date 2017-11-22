@@ -5,5 +5,5 @@
 %p
   %strong Body:
   = @blog.body
-= link_to 'Edit', edit_blog_path(@blog)
+= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin)
 = link_to 'Back', blogs_path
