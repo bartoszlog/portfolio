@@ -15,7 +15,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'friendly_id'
 gem 'pry'
 gem 'devise'
-
+gem 'bootstrap-sass', '~> 3.3.7'
+gem 'petergate', '~> 1.6', '>= 1.6.3'
 group :development, :test do
   gem 'byebug'
   gem 'pry-byebug'
