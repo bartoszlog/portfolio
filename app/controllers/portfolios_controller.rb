@@ -45,7 +45,8 @@ class PortfoliosController < ApplicationController
     end
     
     def destroy
-        @portfolio.destroy
+        binding.pry
+        @portfolio.destroy!
         redirect_to portfolios_path
     end
     
