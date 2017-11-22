@@ -8,22 +8,10 @@
     = stylesheet_link_tag    'blogs', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    /start
     = render 'shared/blog_navbar'
-    .blog-header
-      .container
-        %h1.blog-title The Rails Blog
-        %p.lead.blog-description First filler.   
+    = render 'shared/blog_masthead'   
     %main.container{:role => "main"}
       .row
         = yield
         = render 'shared/blog_sidebar'
-      %footer.blog-footer
-        %p
-          Blog template built for
-          %a{:href => "https://getbootstrap.com/"} Bootstrap
-          by
-          = succeed "." do
-            %a{:href => "https://twitter.com/mdo"} @mdo
-        %p
-          %a{:href => "#"} Back to top
+      = render 'shared/blog_footer'  

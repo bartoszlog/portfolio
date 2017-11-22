@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
   layout "blog"
 
   def index
-    @blogs = Blog.all
+    @blogs = Blog.paginate(:page => params[:page], :per_page => 4)
     @page_title = "My Portfolio Blog"
   end
 

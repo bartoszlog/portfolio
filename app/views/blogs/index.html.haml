@@ -1,5 +1,7 @@
 .col-sm-8.blog-main
-  = render @blogs
-
-%br/
-= link_to "New Blog", new_blog_path if logged_in?(:site_admin)
+  .row
+    = will_paginate @posts, id: 'will_paginate'
+  .row.new_blog
+    = link_to "New Blog", new_blog_path if logged_in?(:site_admin)
+  .row
+    = render @blogs
