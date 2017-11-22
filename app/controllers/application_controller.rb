@@ -5,5 +5,7 @@ class ApplicationController < ActionController::Base
   include DeviseList
   include SetSource
   include CurrentUserConcern
+  include DefaultPage
+  
 
 end

@@ -1,11 +1,14 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
+  layout "blog"
 
   def index
     @blogs = Blog.all
+    @page_title = "My Portfolio Blog"
   end
 
   def show
+    @page_title = @blog.title
   end
 
   def new
@@ -37,9 +40,7 @@ class BlogsController < ApplicationController
 
   def destroy
     @blog.destroy
-    respond_to do |format|
-      format.html { redirect_to blogs_url, notice: 'Post was successfully destroyed.' }
-    end
+    redirect_to blogs_path
   end
   
   def toggle_status

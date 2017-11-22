@@ -4,7 +4,11 @@
   %thead
     %tr
       %th Title
+      %th Subtitle
       %th Body
-      %th{:colspan => "3"}
+
   %tbody
-    = render @portfolios
+    = render @blogs
+
+%br/
+= link_to 'New Blog', new_blog_path

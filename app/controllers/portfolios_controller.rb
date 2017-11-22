@@ -1,8 +1,9 @@
 class PortfoliosController < ApplicationController
     before_action :portfolio_item_find, only: [:edit, :show, :destroy, :update]
+    layout "portfolio"
     
     def index
-        @portfolio_items = Portfolio.all 
+        @portfolios = Portfolio.all 
     end
     
     def java
@@ -10,17 +11,17 @@ class PortfoliosController < ApplicationController
     end
     
     def rails_porfolio
-        @portfolio_item = Portfolio.rails_portfolio_items
+        @portfolio = Portfolio.rails_portfolio_items
     end
     
     def new
-        @portfolio_item = Portfolio.new
-        3.times { @portfolio_item.technologies.build }
+        @portfolio = Portfolio.new
+        3.times { @portfolio.technologies.build }
     end
     
     def create
-        @portfolio_item = Portfolio.new(portfolio_params)
-        if @portfolio_item.save
+        @portfolio = Portfolio.new(portfolio_params)
+        if @portfolio.save
             redirect_to portfolios_path
         else
             redirect_to portfolios_path
@@ -32,10 +33,10 @@ class PortfoliosController < ApplicationController
     end
     
     def update
-        if @portfolio_item.update(portfolio_params)
-            redirect_to @portfolio_item
+        if @portfolio.update(portfolio_params)
+            redirect_to portfolio_show_path
         else
-            redirect_to portfolios_path
+            redirect_to root_path
         end
     end
     
@@ -44,7 +45,8 @@ class PortfoliosController < ApplicationController
     end
     
     def destroy
-        @portfolio_item.destroy
+        binding.pry
+        @portfolio.destroy!
         redirect_to portfolios_path
     end
     
@@ -56,7 +58,7 @@ class PortfoliosController < ApplicationController
                                           technologies_attributes: [:name])
     end
     def portfolio_item_find
-        @portfolio_item = Portfolio.find(params[:id]) 
+        @portfolio = Portfolio.find(params[:id]) 
     end
 end
 
