@@ -7,15 +7,15 @@
       %ul
         - blog.errors.full_messages.each do |message|
           %li= message
-  .field
+  .form-group
     = f.label :title
     %br/
-    = f.text_field :title
-  .field
+    = f.text_field :title, class: 'form-control'
+  .form-group
     = f.label :body
     %br/
-    = f.text_area :body
+    = f.text_area :body, class: 'form-control', rows: '15'
   .actions
-    = f.submit
+    = f.submit "Submit", class: 'btn btn-primary'
     
     
