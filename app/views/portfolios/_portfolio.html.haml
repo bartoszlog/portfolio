@@ -1,7 +1,5 @@
-%tr
-  %td= portfolio.title
-  %td= portfolio.subtitle
-  %td= portfolio.body
-  %td= link_to "Link", portfolio_show_path(portfolio)
-  %td= link_to "Edit", portfolio_edit_path(portfolio) if logged_in?(:site_admin)
-  %td= link_to 'Delete', portfolio_destroy_path(portfolio), method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin)
+.card
+  = image_tag portfolio.thumb_image unless portfolio.thumb_image.nil?
+  %p.card-text
+    %span= link_to portfolio.title, portfolio_show_path(portfolio)
+    = portfolio.subtitle

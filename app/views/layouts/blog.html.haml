@@ -2,13 +2,16 @@
 %html
   %head
     %title= @page_title
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}
     = csrf_meta_tags
     = stylesheet_link_tag    'blogs', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    %p.notice= notice
-    %p.alert= alert
-    = source_helper
-    = login_helper
-    = yield
-    = render 'shared/navbar', location: 'bottom'
+    = render 'shared/blog_navbar'
+    = render 'shared/blog_masthead'   
+    %main.container{:role => "main"}
+      .row
+        = yield
+        = render 'shared/blog_sidebar'
+      = render 'shared/blog_footer'  

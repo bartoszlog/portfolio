@@ -1,14 +1,15 @@
 !!!
 %html
   %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}/
     %title= @page_title
     = csrf_meta_tags
     = stylesheet_link_tag    'portfolios', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    %p.notice= notice
-    %p.alert= alert
-    = render 'shared/navbar', location: 'top'
-    = source_helper
-    = login_helper
+    = render 'shared/portfolio_navbar'
+    = render 'shared/portfolio_masthead' unless logged_in?(:site_admin)
     = yield
+    = render 'shared/portfolio_footer'
+    = source_helper("application")

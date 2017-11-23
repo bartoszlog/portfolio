@@ -1,7 +1,10 @@
-%tr
-  %td= blog.title
-  %td= blog.body
-  %td= link_to blog.status, toggle_status_blog_path(blog)
-  %td= link_to 'Show', blog
-  %td= link_to 'Edit', edit_blog_path(blog) if logged_in?(:site_admin)
-  %td= link_to 'Delete', blog, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin)
+.blog-post
+  %h2.blog-post-title= blog.title
+  %p.blog-post-meta= "Published " << distance_of_time_in_words(blog.created_at, Time.now) << " ago"
+  %p.blog-post-meta
+    = link_to 'Show', blog
+    - if logged_in?(:site_admin)
+      = link_to blog.status, toggle_status_blog_path(blog)
+      = link_to 'Edit', edit_blog_path(blog)
+      = link_to 'Delete', blog, method: :delete, data: { confirm: 'Are you sure?' }
+  %p= blog.body

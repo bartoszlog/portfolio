@@ -1,17 +1,23 @@
-= form_for portfolio do |portfolio|
-    = portfolio.label :title
-    = portfolio.text_field :title
-    %br
-    = portfolio.label :subtitle
-    = portfolio.text_area :subtitle
-    %br
-    = portfolio.label :body
-    = portfolio.text_area :body
-    %br
-    %ul
-        = portfolio.fields_for :technologies do |technology_form|
-            %li
-                =technology_form.label :name
-                =technology_form.text_field :name
-    %br
-    = portfolio.submit
+= form_for(portfolio) do |f|
+  .row
+    .col-md-6
+      .form-group
+        = f.label :title
+        = f.text_field :title, class: 'form-control'
+      .form-group
+        = f.label :subtitle
+        = f.text_field :subtitle, class: 'form-control'
+    .col-md-6
+      .form-group
+        = f.label :body
+        = f.text_area :body, class: 'form-control', rows: 13
+  %hr/
+  .col-md-12
+    %h2 Technolgies Used:
+    %div
+      = f.fields_for :technologies do |technology_form|
+        .form-group
+          = technology_form.label :name
+          = technology_form.text_field :name, class: 'form-control'
+    .form-group
+      = f.submit 'Save Portfolio', class: 'btn btn-primary btn-block'

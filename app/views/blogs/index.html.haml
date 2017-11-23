@@ -1,14 +1,7 @@
-%p#notice= notice
-%h1 Listing Blogs
-%table
-  %thead
-    %tr
-      %th Title
-      %th Subtitle
-      %th Body
-
-  %tbody
+.col-sm-8.blog-main
+  .row
+    = will_paginate @posts, id: 'will_paginate'
+  .row.new_blog
+    = link_to "New Blog", new_blog_path if logged_in?(:site_admin)
+  .row
     = render @blogs
-
-%br/
-= link_to "New Blog", new_blog_path if logged_in?(:site_admin)

@@ -1,7 +1,9 @@
-%p= 'Homepage'
-%p= "Hi, "<< current_user.first_name
-= @blogs.inspect
-%br
-%br
-= @skills.inspect
-
+%header.masthead.clearfix
+.inner
+  %main.inner.cover{:role => "main"}
+    %h1.cover-heading Cover your page.
+    %p.lead Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.
+    %p.lead
+    = link_to "About me", about_path, class: "btn btn-lg btn-secondary"
+%footer.mastfoot
+.inner

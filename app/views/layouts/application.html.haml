@@ -5,10 +5,13 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}/
   %body
-    = render 'shared/navbar',location: 'top'
-    = source_helper
-    = yield
-    %p.notice= notice
-    %p.alert= alert
-    = login_helper
+    .site-wrapper
+      .site-wrapper-inner
+        .cover-container
+          = render 'shared/application_navbar'
+          = source_helper("application")
+          = yield
+          = render 'shared/home_footer'
