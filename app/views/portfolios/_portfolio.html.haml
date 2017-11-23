@@ -1,5 +1,6 @@
 .card
-  = image_tag portfolio.thumb_image unless portfolio.thumb_image.nil?
-  %p.card-text
+  .card-header
+    = image_tag portfolio.thumb_image unless portfolio.thumb_image.nil?
+  %p.card-footer
     %span= link_to portfolio.title, portfolio_show_path(portfolio)
     = portfolio.subtitle

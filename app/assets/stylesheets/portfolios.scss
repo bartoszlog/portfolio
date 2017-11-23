@@ -36,10 +36,13 @@ body {
 }
 
 .card {
+  text-align: center;
+  background-color: #f0f0f5;
   float: left;
-  width: 33.333%;
-  padding: .75rem;
-  margin-bottom: 2rem;
+  width: 31.333%;
+  padding: 1rem;
+  margin-bottom: 3rem;
+  margin-left: .30rem;
   border: 0;
   > img {
     margin-bottom: .75rem;

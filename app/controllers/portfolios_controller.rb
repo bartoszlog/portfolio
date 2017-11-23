@@ -5,7 +5,7 @@ class PortfoliosController < ApplicationController
     layout "portfolio"
     
     def index
-        @portfolios = Portfolio.order("position DESC")
+        @portfolios = Portfolio.change_position
     end
     
     def new
