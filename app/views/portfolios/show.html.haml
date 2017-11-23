@@ -1,17 +1,13 @@
-%h1= 'Show portfolio!'
-
-= @portfolio.title
-%br
-= @portfolio.subtitle
-%br
-= @portfolio.body
-%br
-= image_tag @portfolio.main_image
-%br
-= image_tag @portfolio.thumb_image
-
-%h2 Technolgies used :
-
-- @portfolio.technologies.each do |t|
-    = t.name
-    %br
+.container
+  .row
+    .col-md-7
+      = image_tag @portfolio.main_image
+    .col-md-5
+      %h1= @portfolio.title
+      %hr/
+      %em= @portfolio.subtitle
+      %p= @portfolio.body
+      %hr/
+      %h3 Technologies Used:
+      - @portfolio.technologies.each do |t|
+        %p= t.name

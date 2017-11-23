@@ -10,7 +10,7 @@ module ApplicationHelper
     end
   end
   
-  def source_helper
+  def source_helper(layout_name)
     if session[:source]
       greeting = "Thanks for visiting me from  #{session[:source]}"
       content_tag(:p, greeting, class: 'greeting') 

@@ -4,9 +4,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
-/*
- * Globals
- */
 
 @media (min-width: 48em) {
   html {
@@ -25,17 +22,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   color: #333;
 }
 
-/*
- * Override Bootstrap's default container.
- */
-
 .container {
   max-width: 60rem;
 }
-
-/*
- * Masthead for nav
- */
 
 .blog-masthead {
   font-size: 1rem;
@@ -43,8 +32,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   background-color: #428bca;
   box-shadow: inset 0 -0.1rem 0.25rem rgba(0, 0, 0, 0.1);
 }
-
-/* Nav links */
 
 .nav-link {
   position: relative;
@@ -73,12 +60,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   }
 }
 
-/* Active state gets a caret at the bottom */
-
-/*
- * Blog name and description
- */
-
 .blog-header {
   padding-bottom: 1.25rem;
   margin-bottom: 2rem;
@@ -102,12 +83,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   }
 }
 
-/*
- * Main column and sidebar layout
- */
-
-/* Sidebar modules for boxing content */
-
 .sidebar-module {
   padding: 1rem;
 }
@@ -121,18 +96,12 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   }
 }
 
-/* Pagination */
-
 .blog-pagination {
   margin-bottom: 4rem;
   > .btn {
     border-radius: 2rem;
   }
 }
-
-/*
- * Blog posts
- */
 
 .blog-post {
   margin-bottom: 4rem;
@@ -147,10 +116,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   margin-bottom: 1.25rem;
   color: #999;
 }
-
-/*
- * Footer
- */
 
 .blog-footer {
   padding: 2.5rem 0;
