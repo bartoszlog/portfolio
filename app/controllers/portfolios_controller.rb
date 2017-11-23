@@ -5,11 +5,7 @@ class PortfoliosController < ApplicationController
     layout "portfolio"
     
     def index
-        @portfolios = Portfolio.all 
-    end
-    
-    def rails_porfolio
-        @portfolio = Portfolio.rails_portfolio_items
+        @portfolios = Portfolio.order("position DESC")
     end
     
     def new
