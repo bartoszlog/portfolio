@@ -11,7 +11,12 @@
     .site-wrapper
       .site-wrapper-inner
         .cover-container
+          = video_tag 'frontpagevideo.mp4',
+                      id: 'background',
+                      loop: true,
+                      autoplay: true,
+                      muted: true
           = render 'shared/application_navbar'
           = source_helper("application")
-          = yield
           = render 'shared/home_footer'
+          = yield
