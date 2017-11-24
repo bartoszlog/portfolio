@@ -9,8 +9,12 @@ class Portfolio < ActiveRecord::Base
     
     after_initialize :set_defaults
     
+    def self.change_position
+      order("position DESC")  
+    end
+    
     def set_defaults
-        self.main_image ||= Placeholder.image_generator(600,400)
-        self.thumb_image ||= Placeholder.image_generator(350,250)
+      self.main_image ||= Placeholder.image_generator(600,400)
+      self.thumb_image ||= Placeholder.image_generator(350,250)
     end
 end
