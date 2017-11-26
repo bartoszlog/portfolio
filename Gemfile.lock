@@ -73,6 +73,7 @@ GEM
       activerecord (>= 4.0.0)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    gritter (1.2.0)
     haml (5.0.4)
       temple (>= 0.8.0)
       tilt
@@ -199,6 +200,7 @@ DEPENDENCIES
   devise
   font-awesome-rails (~> 4.7, >= 4.7.0.2)
   friendly_id
+  gritter (~> 1.2)
   haml
   jbuilder (~> 2.0)
   jquery-rails
