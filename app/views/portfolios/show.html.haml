@@ -2,6 +2,8 @@
   .row
     .col-md-7
       = image_tag @portfolio.main_image
+      - if logged_in?(:site_admin)
+        = link_to 'Edit', portfolio_edit_path
     .col-md-5
       %h1= @portfolio.title
       %hr/
@@ -11,3 +13,4 @@
       %h3 Technologies Used:
       - @portfolio.technologies.each do |t|
         %p= t.name
+        

@@ -16,8 +16,7 @@
     %h2 Technolgies Used:
     %div
       = f.fields_for :technologies do |technology_form|
-        .form-group
-          = technology_form.label :name
-          = technology_form.text_field :name, class: 'form-control'
+        = render 'technology_fields', f: technology_form
+      = link_to_add_association 'Add technology' , f, :technologies, class: 'btn btn-info'
     .form-group
       = f.submit 'Save Portfolio', class: 'btn btn-primary btn-block'

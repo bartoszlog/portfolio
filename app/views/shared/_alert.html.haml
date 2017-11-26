@@ -1,0 +1,6 @@
+- if flash[:alert]
+  =  js add_gritter(flash[:alert])
+- elsif flash[:error]
+  =  js add_gritter(flash[:error])
+- else
+  =  js add_gritter(flash[:notice])
