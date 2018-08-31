@@ -17,7 +17,7 @@ $ rails g model post title:string content:text published:boolean
 $ bundle exec rails db:migrate
 ```
 And seed some sample data to play with:
-```ruby
+```java
 100.times { |i| Post.create(title: "title #{i}", content: "content #{i}", published: [true, false].sample) }
 ```
 
